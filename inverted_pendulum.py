@@ -6,14 +6,14 @@ import matplotlib.animation as animation
 from collections import deque
 
 g = 9.81  # acceleration due to gravity, in m/s^2
-L = 1.0  # length of pendulum in m
+L = 0.2  # length of pendulum in m
 # M1= 1.0  # mass of pendulum in kg
-t_stop = 5  # how many seconds to simulate
+t_stop = 15  # how many seconds to simulate
 history_len = 500  # how many trajectory points to display
 A = 0.1 # amplitude of oscilation, in m
 a = A / L
 w_crit = np.sqrt(g / L) # value of w to keep pendulum upright
-w = 100 # frequeny of oscillation
+w = 45 # frequeny of oscillation
 
 def derivs(state, t): # given positions and velocities return accelerations 
     
@@ -45,7 +45,7 @@ y = L*cos(y[:, 0])
 #+ y[:, 2]
 
 fig = plt.figure(figsize=(5, 4))
-ax = fig.add_subplot(autoscale_on=False, xlim=(-L, L), ylim=(-L, 1.))
+ax = fig.add_subplot(autoscale_on=False, xlim=(-0.15, 0.15), ylim=(-0.1, 0.3))
 ax.set_aspect('equal')
 ax.grid()
 
